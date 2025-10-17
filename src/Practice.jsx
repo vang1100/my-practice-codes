@@ -149,24 +149,27 @@ let infected = [];
 
  let i = 0;
 
- 
-//  while ( i < rats.length) {
-//     if (rats[i] === 'i');
-//  }
-
-
 while ( i < rats.length) {
 
         if (rats[i].infected === 'yes') {
 
-              let infectedRats = rats.splice(i, 1);
+            infected.push(rats.splice(i, 1));
 
-              console.log(infectedRats);
-        }
+              console.log('which objects are infected', infected);
 
-    i++;
+        } else if (rats[i].infected === 'no') {
+
+                uninfected.push(rats.splice(i,1));
+
+                console.log('which test objects are uninfected', uninfected)
+        } else {
+            i++;
+        }         
+
+   
 }
 
+console.log('new rat array', rats);
 
 
     return (
