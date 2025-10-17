@@ -159,7 +159,7 @@ while ( i < rats.length) {
 
         } else if (rats[i].infected === 'no') {
 
-                uninfected.push(rats.splice(i,1));
+                uninfected.push(rats.splice(i, 1));
 
                 console.log('which test objects are uninfected', uninfected)
         } else {
@@ -169,7 +169,40 @@ while ( i < rats.length) {
    
 }
 
-console.log('new rat array', rats);
+ noStatus = rats;
+console.log('new rat array', noStatus);
+
+let houseStatus = ['sold', 'unsold', 'sold', 'unsold', 'sold', 'sold', 'sold'];
+
+let soldHouses = 0;
+
+for (let houses of houseStatus) {
+    if (houses === 'sold') {
+
+        soldHouses +=1
+    }
+}
+
+console.log('how many houses were sold', soldHouses);
+
+
+const sumFun = (num1, num2) => {
+
+    return num1 / num2;
+
+}
+
+console.log(sumFun(5,5));
+
+
+
+
+
+
+
+// console.log(person(people[0].name, people[0].age));
+
+//console.log(people[0].name)
 
 
     return (
