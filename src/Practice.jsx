@@ -208,7 +208,7 @@ console.log(sumFun(5,5));
     return (
         <div>
 
-            PRACTICE
+            Practice
         </div>
     )
 }

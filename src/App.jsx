@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Practice from './practice'
+import Todo from './ToDo/Todo'
 
 function App() {
 
@@ -12,7 +13,8 @@ function App() {
   return (
     <>
 
-    <Practice/>
+    <Todo/>
+    {/* <Practice/> */}
       {/* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
