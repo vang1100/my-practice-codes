@@ -1,28 +1,30 @@
+
+import {useState} from 'react';
+
 function Todo() {
 
+    const [toggle, setToggle] = useState(true);
+
+    const handleChange = () => {
+        return setToggle(!toggle);
+    }
     return (
         <>
 
         To do app practice
 
-        <h1>December Checklist</h1>
+        <h1>February Checklist</h1>
         <input></input><button>Submit</button>
-        <ul><h3>Christmas shopping</h3>
-            <li>
-                Mom & Dad
-            </li>
-            <li>
-                Patrick
-            </li>
-            <li>
-                Pakou's family
-            </li>
-            <li>
-                Pakee's family
-            </li>
-            <li>
-                Seng
-            </li>
+        <ul>
+            
+            <li>Item One</li> 
+                <button>Delete</button> 
+                <button onClick={() => handleChange()}>{toggle ? 'Incomplete' : 'Completed'}</button>
+                
+            <li>Item Two</li> 
+                <button>Delete</button> 
+                 <button>Incomplete</button>
+                
 
         </ul>
         

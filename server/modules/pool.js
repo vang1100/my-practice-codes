@@ -2,8 +2,8 @@ const pg = require('pg');
 
 const pool = new pg.Pool({
     host: 'localhost',
-    port: 5432,
-    database: 'todo', 
+    port: 5001,
+    database: 'my-practice-codes', 
 });
 
 module.exports = pool;
