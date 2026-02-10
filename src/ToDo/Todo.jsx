@@ -6,6 +6,7 @@ function Todo() {
         To do app practice
 
         <h1>December Checklist</h1>
+        <input></input><button>Submit</button>
         <ul><h3>Christmas shopping</h3>
             <li>
                 Mom & Dad
