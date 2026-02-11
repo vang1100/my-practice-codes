@@ -18,8 +18,12 @@ function Todo() {
         <ul>
             
             <li>Item One</li> 
-                <button>Delete</button> 
-                <button onClick={() => handleChange()}>{toggle ? 'Incomplete' : 'Completed'}</button>
+                <button style={{backgroundColor: 'yellow'}}>Delete</button> 
+                <button onClick={() => handleChange()}
+                        style={{ backgroundColor: toggle ? 'red' : 'green' }}
+                    >
+                    {toggle ? 'Incomplete' : 'Completed'}
+                </button>
                 
             <li>Item Two</li> 
                 <button>Delete</button> 
