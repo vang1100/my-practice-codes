@@ -16,6 +16,18 @@ router.get('/', (req, res) => {
     })
 });
 
+router.post('/', (req, res) => {
+    console.log('POST req.body', req.body);
+    let queryText = 'INSERT INTO "checklist" ("item") VALUES ($1);'
+    pool.query(queryText, [req.body.item])
+    .then((result) => {
+        res.sendStatus(200);
+    }).catch((err) => {
+        console.log(err);
+        res.sendStatus(500);
+    });
+});
+
 router.delete('/:id', (req, res) => {
     let { id } = req.params;
     const sqlText = `DELETE FROM "checklist" WHERE "id" = $1;`;
