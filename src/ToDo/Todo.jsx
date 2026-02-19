@@ -66,6 +66,7 @@ function Todo() {
                 console.log(response);
 
                 setAddItem('');
+                
                 fetchItems();
             })
             .catch((error) =>
@@ -86,7 +87,11 @@ function Todo() {
 
         <form onSubmit={postItem}>
 
-            <input id="item-input" onChange={(event) => setAddItem(event.target.value)}></input>
+            <input id="item-input"
+            value={addItem}                                   
+            onChange={(event) => setAddItem(event.target.value)}
+            
+            />
 
             <button type="submit">Add Item</button>
 
