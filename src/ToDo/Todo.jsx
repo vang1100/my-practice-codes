@@ -8,6 +8,8 @@ function Todo() {
 
     const [item, setItem] = useState([]);
 
+    const [addItem, setAddItem] = useState('');
+
     useEffect (() => {
         fetchItems();
     }, []);
@@ -49,7 +51,26 @@ function Todo() {
             })
     }
 
-    // function to ADD  items
+    // function to ADD items
+
+    const postItem = (event) => {
+        event.preventDefault();
+
+        const newItem = {
+
+            item: addItem
+        }
+
+        axios.post('http://localhost:5001/api/todo', newItem)
+            .then((response) => {
+                console.log(response);
+
+                setAddItem('');
+                fetchItems();
+            })
+            .catch((error) =>
+            console.log(error))
+    }
 
     // function to PUT aka EDIT items
 
@@ -62,7 +83,15 @@ function Todo() {
         To do app practice
 
         <h1>February Checklist</h1>
-        <input></input><button>Submit</button>
+
+        <form onSubmit={postItem}>
+
+            <input id="item-input" onChange={(event) => setAddItem(event.target.value)}></input>
+
+            <button type="submit">Add Item</button>
+
+        </form>
+
         <ul>
 
             {/* {JSON.stringify(item)} */}
