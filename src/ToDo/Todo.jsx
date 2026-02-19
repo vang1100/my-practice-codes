@@ -6,9 +6,33 @@ function Todo() {
 
     const [toggle, setToggle] = useState(true);
 
+    useEffect (() => {
+        fetchItems();
+    }, []);
+
+    // function for complete button
     const handleChange = () => {
         return setToggle(!toggle);
     }
+
+    // function to GET items
+
+    const fetchItems = () => {
+
+        //axios
+
+
+    }
+
+    // function to DELETE items
+
+    // function to ADD  items
+
+    // function to PUT aka EDIT items
+
+
+
+
     return (
         <>
 
