@@ -16,6 +16,29 @@ router.get('/', (req, res) => {
     })
 });
 
+router.put('/:id', (req, res) => {
+    console.log("in put/update");
+
+    let id  = req.params.id;
+    let item = req.body.item;
+
+    let queryText = ` 
+        UPDATE "checklist" 
+        SET "item" = $1 
+        WHERE "id" = $2;
+                        `;
+
+        pool.query(queryText, [item, id])
+        .then((result) => {
+            console.log(`Got stuff back from the database`, result);
+            res.sendStatus(204);
+        })
+        .catch((error) => {
+            console.log(`Error making database query ${queryText}`, error);
+            res.sendStatus(500); // Good server always responds
+        })
+});
+
 router.post('/', (req, res) => {
     console.log('POST req.body', req.body);
     let queryText = 'INSERT INTO "checklist" ("item") VALUES ($1);'
