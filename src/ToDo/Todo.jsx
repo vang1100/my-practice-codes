@@ -36,6 +36,19 @@ function Todo() {
 
     // function to DELETE items
 
+    const deleteItem = (itemId) => {
+        console.log('testing delete item button');
+
+        axios.delete(`http://localhost:5001/api/todo/${itemId}`)
+            .then((response) => {
+                console.log(response);
+                fetchItems();
+            })
+            .catch((error) =>{
+                console.log(error)
+            })
+    }
+
     // function to ADD  items
 
     // function to PUT aka EDIT items
@@ -52,9 +65,25 @@ function Todo() {
         <input></input><button>Submit</button>
         <ul>
 
-            {JSON.stringify(item)}
+            {/* {JSON.stringify(item)} */}
+
+
+
+            {item.map(
+                function(item) {
+                    return (
+                        <li key={item.id}>
+
+                            {item.item} 
+                            <button onClick={ () => deleteItem(item.id)}>Delete</button>
+
+                        </li>
+                    )
+                }
+            )}
+
             
-            <li>Item One</li> 
+            {/* <li>Item One</li> 
                 <button 
                     style={{backgroundColor: 'yellow'}}
                 >
@@ -70,7 +99,7 @@ function Todo() {
             <li>Item Two</li> 
                 <button>Delete</button> 
                  <button>Incomplete</button>
-                
+                 */}
 
         </ul>
         
