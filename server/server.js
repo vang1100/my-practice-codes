@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const todoRouter = require('./routes/todo.router.js');
 const PORT = process.env.PORT || 5001;
@@ -6,7 +7,9 @@ const PORT = process.env.PORT || 5001;
 /** ---------- MIDDLEWARE ---------- **/
 app.use(express.json()); // needed for axios requests
 app.use(express.static('build'));
-
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
 /** ---------- EXPRESS ROUTES ---------- **/
 app.use('/api/todo', todoRouter);
 
