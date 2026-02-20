@@ -15,9 +15,9 @@ function Todo() {
     }, []);
 
     // function for complete button
-    const handleChange = () => {
-        return setToggle(!toggle);
-    }
+    // const handleChange = () => {
+    //     return setToggle(!toggle);
+    // }
 
     // function to GET items
 
@@ -98,9 +98,6 @@ function Todo() {
         </form>
 
         <ul>
-
-            {/* {JSON.stringify(item)} */}
-
 
 
             {item.map(
