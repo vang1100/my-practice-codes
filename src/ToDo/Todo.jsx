@@ -109,6 +109,7 @@ function Todo() {
                         <li key={item.id}>
 
                             {item.item} 
+                           
                             <button onClick={ () => deleteItem(item.id)}>Delete</button>
 
                         </li>
