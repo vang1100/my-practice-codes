@@ -99,6 +99,7 @@ function Todo() {
 
         <ul>
 
+{/* add checkbox */}
 
             {item.map(
                 function(item) {
