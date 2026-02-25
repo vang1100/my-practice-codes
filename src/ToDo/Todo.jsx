@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import Checkbox from '@mui/material/Checkbox';
 
 function Todo() {
+
+    const label = { slotProps: { input: { 'aria-label': 'Checkbox demo' } } };
 
     const [toggle, setToggle] = useState(true);
 
@@ -82,6 +84,13 @@ function Todo() {
         <>
 
         To do app practice
+
+         <div>
+      <Checkbox {...label} defaultChecked />
+      <Checkbox {...label} />
+      <Checkbox {...label} disabled />
+      <Checkbox {...label} disabled checked />
+    </div>
 
         <h1>February Checklist</h1>
 
