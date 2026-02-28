@@ -115,6 +115,7 @@ function Todo() {
                     return (
                         <li key={item.id}>
 
+                            <Checkbox/>
                             {item.item} 
                            
                             <button onClick={ () => deleteItem(item.id)}>Delete</button>
