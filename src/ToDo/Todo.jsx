@@ -85,14 +85,14 @@ function Todo() {
 
         To do app practice
 
-         <div>
+         {/* <div>
       <Checkbox {...label} defaultChecked />
       <Checkbox {...label} />
       <Checkbox {...label} disabled />
       <Checkbox {...label} disabled checked />
-    </div>
+    </div> */}
 
-        <h1>February Checklist</h1>
+        <h1>March Checklist</h1>
 
         <form onSubmit={postItem}>
 

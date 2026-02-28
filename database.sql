@@ -1,0 +1,5 @@
+CREATE TABLE "checklist" (
+	"id" SERIAL PRIMARY KEY,
+	"item" VARCHAR (100) NOT NULL,
+	"completed" BOOLEAN DEFAULT FALSE
+);
