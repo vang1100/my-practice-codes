@@ -24,11 +24,11 @@ router.put('/:id', (req, res) => {
 
     let queryText = ` 
         UPDATE "checklist" 
-        SET "item" = $1 
-        WHERE "id" = $2;
+        SET "completed" = NOT "completed"
+        WHERE "id" = $1;
                         `;
 
-        pool.query(queryText, [item, id])
+        pool.query(queryText, [id])
         .then((result) => {
             console.log(`Got stuff back from the database`, result);
             res.sendStatus(204);
