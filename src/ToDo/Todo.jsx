@@ -12,6 +12,9 @@ function Todo() {
 
     const [addItem, setAddItem] = useState('');
 
+    
+
+
     useEffect (() => {
         fetchItems();
     }, []);
@@ -77,6 +80,18 @@ function Todo() {
 
     // function to PUT aka EDIT items
 
+    const handleChange = (id) => {
+
+        axios.post(`http://localhost:5001/api/todo/${id}`)
+          
+      .then((response) => {
+        console.log(response);
+        fetchItems();
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+    }
 
 
 
@@ -115,7 +130,8 @@ function Todo() {
                     return (
                         <li key={item.id}>
 
-                            <Checkbox/>
+                           <span onClick={handleChange}> {toggle 
+                           ? <Checkbox/> : 'test' } </span> 
                             {item.item} 
                            
                             <button onClick={ () => deleteItem(item.id)}>Delete</button>
