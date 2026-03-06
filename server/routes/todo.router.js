@@ -20,7 +20,7 @@ router.put('/:id', (req, res) => {
     console.log("in put/update");
 
     let id  = req.params.id;
-    let item = req.body.item;
+    
 
     let queryText = ` 
         UPDATE "checklist" 

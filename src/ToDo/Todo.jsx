@@ -82,7 +82,8 @@ function Todo() {
 
     const handleChange = (id) => {
 
-        axios.post(`http://localhost:5001/api/todo/${id}`)
+        console.log('handle change id', id);
+        axios.put(`http://localhost:5001/api/todo/${id}`)
           
       .then((response) => {
         console.log(response);
@@ -91,6 +92,8 @@ function Todo() {
       .catch((error) => {
         console.log(error);
       })
+
+     
     }
 
 
@@ -130,8 +133,10 @@ function Todo() {
                     return (
                         <li key={item.id}>
 
-                           <span onClick={handleChange}> {toggle 
-                           ? <Checkbox/> : 'test' } </span> 
+                           <Checkbox
+                        checked={item.completed}
+                        onChange={() => handleChange(item.id)}
+                            /> 
                             {item.item} 
                            
                             <button onClick={ () => deleteItem(item.id)}>Delete</button>
