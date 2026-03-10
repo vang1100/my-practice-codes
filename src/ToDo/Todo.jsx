@@ -134,7 +134,7 @@ function Todo() {
                         <li key={item.id}>
 
                            <Checkbox
-                        checked={item.completed}
+                        checked={item.completed} // this will show which items have been completed
                         onChange={() => handleChange(item.id)}
                             /> 
                             {item.item} 
