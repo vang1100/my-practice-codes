@@ -13,7 +13,8 @@ function Todo() {
     const [addItem, setAddItem] = useState('');
 
     
-
+// testing out some code
+  const [name, setName] = useState('');
 
     useEffect (() => {
         fetchItems();
@@ -96,7 +97,13 @@ function Todo() {
      
     }
 
+const handleChangeName = (event) => {
 
+      // event.target is the <input>
+    // event.target.value is whatever the user typed
+    setName(event.target.value);
+
+}
 
     return (
         <>
@@ -134,8 +141,8 @@ function Todo() {
                         <li key={item.id}>
 
                            <Checkbox
-                        checked={item.completed} // this will show which items have been completed
-                        onChange={() => handleChange(item.id)}
+                        checked={item.completed} // checked is the prop of the Checkbox component. When item.completed is true, the box is rendered checked.
+                        onChange={() => handleChange(item.id)} //use onChange to tell React “run this function whenever the value changes.”
                             /> 
                             {item.item} 
                            
@@ -167,7 +174,16 @@ function Todo() {
 
         </ul>
         
-        </>
+        <div>
+            <div>
+      {/* <input
+        value={name}
+        onChange={handleChangeName}
+      />
+      <p>You typed: {name}</p>
+    </div> 
+        </div>
+        </> */}
     )
 }
 
