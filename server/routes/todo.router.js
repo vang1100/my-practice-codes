@@ -6,7 +6,7 @@ const pool = require('../modules/pool.js');
 
 router.get('/', (req, res) => {
     console.log("In GET request");
-    let queryText = 'SELECT * from "checklist"';
+    let queryText = 'SELECT * from "checklist" ORDER BY "id"';
 
     pool.query(queryText).then((result) => {
         res.send(result.rows);

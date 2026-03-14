@@ -134,7 +134,7 @@ const handleChangeName = (event) => {
         <ul>
 
 {/* add checkbox */}
-
+{/* 
             {item.map(
                 function(item) {
                     return (
@@ -151,7 +151,24 @@ const handleChangeName = (event) => {
                         </li>
                     )
                 }
-            )}
+
+            )} */}
+
+<ul>
+  {item
+    // keep order by id, do NOT sort by completed
+    .sort((a, b) => a.id - b.id) // optional: enforces stable id order
+    .map((todo) => (
+      <li key={todo.id}>
+        <Checkbox
+          checked={todo.completed}
+          onChange={() => handleChange(todo.id)}
+        />
+        {todo.item}
+        <button onClick={() => deleteItem(todo.id)}>Delete</button>
+      </li>
+    ))}
+</ul>
 
             
             {/* <li>Item One</li> 
@@ -175,15 +192,15 @@ const handleChangeName = (event) => {
         </ul>
         
         <div>
-            <div>
-      {/* <input
+            {/* <div>
+      <input
         value={name}
         onChange={handleChangeName}
       />
       <p>You typed: {name}</p>
-    </div> 
+    </div>  */}
         </div>
-        </> */}
+        </>
     )
 }
 
