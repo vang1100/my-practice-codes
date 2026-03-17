@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Practice from './practice'
 import Todo from './ToDo/Todo'
+import Notes from './Notes'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
     <>
 
     <Todo/>
+    <Notes/>
     {/* <Practice/> */}
       {/* <div>
         <a href="https://vite.dev" target="_blank">
